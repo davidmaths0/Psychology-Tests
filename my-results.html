@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Results — Psychology Tests</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Site header (same on every page) -->
+
+    <header class="site-header">
+        <div class="site-header-inner">
+
+            <a href="index.html" class="site-logo">🧠 Psychology Tests</a>
+
+            <nav class="site-nav" id="site-nav">
+                <a href="learn.html">Learn</a>
+                <a href="my-results.html" class="active">My Results</a>
+            </nav>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Page hero -->
+
+        <header class="header">
+
+            <h1>Your Results</h1>
+
+            <p>
+                See which tests you've completed, and pick up where you left off.
+            </p>
+
+        </header>
+
+
+        <!-- Content card -->
+
+        <div class="content-card">
+
+            <section class="tests" id="results-list">
+                <!-- Rendered by js/my-results.js -->
+            </section>
+
+        </div>
+
+
+        <!-- Footer -->
+
+        <footer class="footer">
+            Psychology Tests
+        </footer>
+
+    </main>
+
+    <script src="js/nav.js" defer></script>
+    <script src="js/my-results.js" defer></script>
+
+</body>
+</html>

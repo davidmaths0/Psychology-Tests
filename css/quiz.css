@@ -1,0 +1,239 @@
+/* ==========================================================================
+   Quiz card (shared shell for intro / question / results screens)
+   ========================================================================== */
+
+.quiz-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+}
+
+.about-condition {
+    margin-top: 24px;
+}
+
+.about-condition h2 {
+    font-size: 20px;
+}
+
+.about-condition p:not(.quiz-attribution) {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--color-muted);
+}
+
+.quiz-card h1 {
+    font-size: 28px;
+    color: var(--color-heading);
+    margin-bottom: 12px;
+}
+
+.quiz-card h2 {
+    font-size: 22px;
+    color: var(--color-heading);
+    margin-bottom: 20px;
+}
+
+/* Intro screen */
+
+.quiz-intro {
+    text-align: center;
+}
+
+.quiz-description {
+    color: var(--color-muted);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.quiz-instructions {
+    color: var(--color-subtle);
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+.quiz-meta {
+    color: var(--color-subtle);
+    font-size: 13px;
+    margin-bottom: 26px;
+}
+
+.quiz-attribution {
+    margin-top: 18px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--color-footer);
+}
+
+/* ==========================================================================
+   Progress bar
+   ========================================================================== */
+
+.quiz-progress {
+    width: 100%;
+    height: 6px;
+    background: var(--color-track);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.quiz-progress-bar {
+    height: 100%;
+    background: var(--color-primary);
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+.quiz-step {
+    font-size: 13px;
+    color: var(--color-subtle);
+    margin-bottom: 14px;
+}
+
+/* ==========================================================================
+   Question + options
+   ========================================================================== */
+
+.quiz-question {
+    font-size: 20px;
+    color: var(--color-heading-alt);
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.quiz-option {
+    width: 100%;
+    text-align: left;
+    padding: 14px 18px;
+
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--color-text);
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.quiz-option:hover {
+    border-color: var(--color-primary-light);
+    background: var(--color-primary-soft);
+}
+
+.quiz-option.selected {
+    border-color: var(--color-primary);
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Navigation buttons
+   ========================================================================== */
+
+.quiz-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.quiz-btn {
+    flex: 1;
+    padding: 13px 20px;
+
+    border: none;
+    border-radius: var(--radius-md);
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.quiz-btn-primary {
+    background: var(--color-primary);
+    color: var(--color-bg);
+}
+
+.quiz-btn-primary:hover {
+    opacity: 0.9;
+}
+
+.quiz-btn-primary:disabled {
+    background: var(--color-border);
+    color: var(--color-subtle);
+    cursor: not-allowed;
+}
+
+.quiz-btn-secondary {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    color: var(--color-label);
+}
+
+.quiz-btn-secondary:hover {
+    border-color: var(--color-primary-light);
+}
+
+.quiz-btn-secondary:disabled {
+    color: var(--color-subtle);
+    cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Results screen
+   ========================================================================== */
+
+.quiz-interpretation {
+    font-size: 13px;
+    color: var(--color-subtle);
+    margin-top: 6px;
+}
+
+.quiz-disclaimer {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border-light);
+
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--color-subtle);
+    text-align: center;
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: 600px) {
+
+    .quiz-card {
+        padding: 24px 20px;
+    }
+
+    .quiz-card h1 {
+        font-size: 24px;
+    }
+
+    .quiz-question {
+        font-size: 18px;
+    }
+}

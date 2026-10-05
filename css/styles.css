@@ -1,0 +1,522 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+:root {
+    /* Colores de texto */
+    --color-text: #172033;
+    --color-heading: #172b4d;
+    --color-heading-alt: #1c3557;
+    --color-label: #34445c;
+    --color-muted: #718096;
+    --color-subtle: #8492a6;
+    --color-footer: #a0aec0;
+
+    /* Colores de marca */
+    --color-primary: #3678c9;
+    --color-primary-light: #8fb8e8;
+    --color-primary-soft: #eef6ff;
+
+    /* Fondos y bordes */
+    --color-page-bg: #eef1f7;
+    --color-bg: #ffffff;
+    --color-border: #dbe7f5;
+    --color-border-light: #e5edf6;
+    --color-track: #edf3f9;
+
+    /* Sombra sutil para la tarjeta de contenido */
+    --shadow-card: 0 4px 24px rgba(23, 43, 77, 0.06);
+
+    /* Otros */
+    --radius-md: 12px;
+    --radius-lg: 14px;
+    --transition: all 0.2s ease;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--color-page-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 50px 0 60px;
+}
+
+/* ==========================================================================
+   Site header (appears on every page)
+   ========================================================================== */
+
+.site-header {
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border-light);
+    position: relative; /* anchors the mobile dropdown nav */
+}
+
+.site-header-inner {
+    width: 90%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 16px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-logo {
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    color: var(--color-heading);
+    text-decoration: none;
+}
+
+.site-logo:hover {
+    color: var(--color-primary);
+}
+
+/* Desktop nav links */
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.site-nav a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-label);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+    color: var(--color-primary);
+}
+
+/* Hamburger button (hidden on desktop) */
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    width: 32px;
+    height: 32px;
+    padding: 0;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-toggle-bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--color-heading);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.nav-toggle.open .nav-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.open .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   Page hero (title + intro, sits directly on the page background,
+   visually separate from the white content card below it)
+   ========================================================================== */
+
+.header {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    color: var(--color-heading);
+    margin-bottom: 16px;
+}
+
+.header p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--color-muted);
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Learn page sections
+   ========================================================================== */
+
+.learn-section {
+    padding-top: 28px;
+    border-top: 1px solid var(--color-border-light);
+}
+
+.learn-section:first-child {
+    padding-top: 0;
+    border-top: none;
+}
+
+.learn-section + .learn-section {
+    margin-top: 28px;
+}
+
+.learn-section h2 {
+    font-size: 20px;
+    color: var(--color-heading);
+    margin-bottom: 10px;
+}
+
+.learn-placeholder {
+    font-size: 14px;
+    color: var(--color-subtle);
+    font-style: italic;
+}
+
+/* ==========================================================================
+   Content card (the white "body" that groups everything below the hero)
+   ========================================================================== */
+
+.content-card {
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    padding: 36px 32px;
+}
+
+/* ==========================================================================
+   Test cards
+   ========================================================================== */
+
+.tests {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.test-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 24px 26px;
+
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    text-decoration: none;
+    color: inherit;
+
+    transition: var(--transition);
+}
+
+.test-card:hover {
+    border-color: var(--color-primary-light);
+    box-shadow: 0 6px 20px rgba(50, 100, 160, 0.08);
+    transform: translateY(-2px);
+}
+
+.test-info h2 {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--color-heading-alt);
+    margin-bottom: 6px;
+}
+
+.test-info p {
+    font-size: 14px;
+    color: var(--color-subtle);
+}
+
+.result-status {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 2px 10px;
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.result-status.status-none {
+    background: var(--color-track);
+    color: var(--color-subtle);
+}
+
+.result-status.status-progress {
+    background: #fff6e0;
+    color: #b7791f;
+}
+
+.result-status.status-done {
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+}
+
+.arrow {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+
+    font-size: 20px;
+
+    transition: var(--transition);
+}
+
+.test-card:hover .arrow {
+    background: var(--color-primary);
+    color: var(--color-bg);
+}
+
+/* ==========================================================================
+   Purpose
+   ========================================================================== */
+
+.purpose {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-border-light);
+    text-align: center;
+}
+
+.purpose p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--color-subtle);
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.purpose strong {
+    color: var(--color-heading-alt);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Results preview ("What will you see?")
+   ========================================================================== */
+
+.results-preview {
+    margin-top: 32px;
+    padding-top: 30px;
+    border-top: 1px solid var(--color-border-light);
+}
+
+.results-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.results-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-heading);
+    margin-bottom: 8px;
+}
+
+.results-header p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-subtle);
+}
+
+/* Individual result */
+
+.result-item {
+    margin-bottom: 22px;
+}
+
+.result-item:last-child {
+    margin-bottom: 0;
+}
+
+.result-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.result-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-label);
+}
+
+.result-percentage {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* Progress bar */
+
+.bar-background {
+    width: 100%;
+    height: 10px;
+    background: var(--color-track);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(
+        90deg,
+        var(--color-primary-light),
+        var(--color-primary)
+    );
+    border-radius: 20px;
+
+    transition: width 1s ease;
+}
+
+/* ==========================================================================
+   What can I do
+   ========================================================================== */
+
+.what-can-i-do {
+    margin-top: 32px;
+    padding-top: 30px;
+    border-top: 1px solid var(--color-border-light);
+
+    text-align: center;
+}
+
+.what-can-i-do h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-heading);
+    margin-bottom: 12px;
+}
+
+.what-can-i-do p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--color-subtle);
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer {
+    text-align: center;
+    margin-top: 55px;
+    font-size: 13px;
+    color: var(--color-footer);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 600px) {
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .site-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        background: var(--color-bg);
+        border-bottom: 1px solid var(--color-border-light);
+
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease;
+    }
+
+    .site-nav.open {
+        max-height: 200px;
+    }
+
+    .site-nav a {
+        padding: 14px 5%;
+        border-top: 1px solid var(--color-border-light);
+    }
+
+    .container {
+        padding-top: 36px;
+    }
+
+    .header h1 {
+        font-size: 38px;
+    }
+
+    .header p {
+        font-size: 15px;
+    }
+
+    .content-card {
+        padding: 26px 20px;
+    }
+
+    .test-card {
+        padding: 20px;
+    }
+
+    .test-info h2 {
+        font-size: 17px;
+    }
+
+    .results-header h2 {
+        font-size: 22px;
+    }
+
+    .what-can-i-do h2 {
+        font-size: 22px;
+    }
+}

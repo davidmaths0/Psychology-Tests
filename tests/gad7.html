@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anxiety Test (GAD-7) — Personality Tests</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/quiz.css">
+</head>
+
+<body>
+
+    <!-- Site header (same on every page) -->
+
+    <header class="site-header">
+        <div class="site-header-inner">
+
+            <a href="../index.html" class="site-logo">🧠 Psychology Tests</a>
+
+            <nav class="site-nav" id="site-nav">
+                <a href="../learn.html">Learn</a>
+                <a href="../my-results.html">My Results</a>
+            </nav>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+
+        </div>
+    </header>
+
+    <main class="container">
+
+        <div id="quiz-app"><!-- QuizEngine renders here --></div>
+
+        <!-- Static info block, not part of the quiz engine -->
+        <section class="quiz-card about-condition">
+
+            <h2>What is GAD?</h2>
+
+            <p>
+                Generalized Anxiety Disorder (GAD) is a mental health
+                condition marked by persistent, excessive worry that is
+                hard to control and that shows up on most days for six
+                months or longer. Unlike the occasional stress everyone
+                experiences before a big event, the worry in GAD tends to
+                attach itself to ordinary, everyday things, work, health,
+                finances, relationships, and often jumps from one concern
+                to the next without a clear trigger. It's usually
+                accompanied by physical symptoms too, like restlessness,
+                muscle tension, fatigue, trouble concentrating, and
+                disrupted sleep, which is part of why many people first
+                bring it up with a primary care doctor rather than a
+                mental health professional. GAD is one of the most common
+                anxiety conditions worldwide, and while it can interfere
+                with daily life if left unaddressed, it responds well to
+                treatment, including therapy, lifestyle changes, and, when
+                needed, medication.
+            </p>
+
+            <p class="quiz-attribution">
+                Sources: Harvard Health Publishing, Harvard Medical School
+                (Generalized Anxiety Disorder); Yale School of Medicine,
+                Clinical Keywords (Generalized Anxiety Disorder).
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="../js/nav.js" defer></script>
+
+    <!-- 1. Generic engine (shared by every test) -->
+    <script src="../js/quiz-engine.js"></script>
+
+    <!-- 2. This test's data (unique per test) -->
+    <script src="../js/tests/gad7-data.js"></script>
+
+    <!-- 3. Wire them together -->
+    <script>
+        new QuizEngine({
+            container: "#quiz-app",
+            testData: window.QuizData.gad7
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ADHD Self-Assessment — Personality Tests</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/quiz.css">
+</head>
+
+<body>
+
+    <!-- Site header (same on every page) -->
+
+    <header class="site-header">
+        <div class="site-header-inner">
+
+            <a href="../index.html" class="site-logo">🧠 Psychology Tests</a>
+
+            <nav class="site-nav" id="site-nav">
+                <a href="../learn.html">Learn</a>
+                <a href="../my-results.html">My Results</a>
+            </nav>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+
+        </div>
+    </header>
+
+    <main class="container">
+
+        <div id="quiz-app"><!-- QuizEngine renders here --></div>
+
+        <!-- Static info block, not part of the quiz engine -->
+        <section class="quiz-card about-condition">
+
+            <h2>What is ADHD?</h2>
+
+            <p>
+                Attention-Deficit/Hyperactivity Disorder (ADHD) is a
+                neurodevelopmental condition, meaning it's rooted in how the
+                brain develops rather than in a person's character or
+                effort. It typically becomes noticeable in childhood and,
+                for many people, continues into adulthood. At its core,
+                ADHD involves ongoing patterns of difficulty sustaining
+                attention, acting on impulse, and in some cases feeling
+                restless or overly active, patterns that show up across
+                different settings, like school, work, or home, not just
+                occasionally. It's worth noting that attention itself isn't
+                simply "low" in ADHD; many people with ADHD can focus
+                intensely on tasks they find genuinely engaging, while
+                struggling to engage with tasks that feel repetitive or
+                unrewarding. ADHD looks different from person to person,
+                and it is not a sign of laziness or low intelligence, but a
+                recognized, well-studied condition that can be understood
+                and managed with the right support.
+            </p>
+
+            <p class="quiz-attribution">
+                Sources: Developmental Medicine Center, Boston Children's
+                Hospital — Harvard Medical School; MSD Manual, Professional
+                Edition (Attention-Deficit/Hyperactivity Disorder).
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="../js/nav.js" defer></script>
+
+    <!-- 1. Generic engine (shared by every test) -->
+    <script src="../js/quiz-engine.js"></script>
+
+    <!-- 2. This test's data (unique per test) -->
+    <script src="../js/tests/adhd-data.js"></script>
+
+    <!-- 3. Wire them together -->
+    <script>
+        new QuizEngine({
+            container: "#quiz-app",
+            testData: window.QuizData.adhd
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+/* ==========================================================================
+   Timeline component (used on the Learn page, one per condition)
+   ========================================================================== */
+
+.timeline-subtitle {
+    font-size: 14px;
+    color: var(--color-subtle);
+    margin-top: -4px;
+    margin-bottom: 20px;
+}
+
+.timeline-slider {
+    position: relative;
+    overflow: hidden;
+
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    padding: 28px 24px;
+    min-height: 200px;
+
+    display: flex;
+    align-items: center;
+}
+
+.timeline-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.timeline-card {
+    min-width: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    text-align: left;
+}
+
+.timeline-card.active {
+    opacity: 1;
+}
+
+.card-year {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-primary);
+    background: var(--color-primary-soft);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.card-title {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--color-heading-alt);
+    margin-bottom: 10px;
+}
+
+.card-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--color-muted);
+}
+
+.card-desc strong {
+    color: var(--color-label);
+}
+
+/* Controls & dots */
+
+.timeline-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+.control-btn {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    padding: 9px 16px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.control-btn:hover:not(:disabled) {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-bg);
+}
+
+.control-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.timeline-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-border);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.dot.active {
+    background: var(--color-primary);
+    transform: scale(1.2);
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: 600px) {
+
+    .timeline-slider {
+        padding: 20px 16px;
+        min-height: 260px;
+    }
+
+    .card-title {
+        font-size: 17px;
+    }
+
+    .timeline-controls {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}

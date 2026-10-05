@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Autism Traits Self-Assessment — Psychology Tests</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/quiz.css">
+</head>
+
+<body>
+
+    <!-- Site header (same on every page) -->
+
+    <header class="site-header">
+        <div class="site-header-inner">
+
+            <a href="../index.html" class="site-logo">🧠 Psychology Tests</a>
+
+            <nav class="site-nav" id="site-nav">
+                <a href="../learn.html">Learn</a>
+                <a href="../my-results.html">My Results</a>
+            </nav>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+
+        </div>
+    </header>
+
+    <main class="container">
+
+        <div id="quiz-app"><!-- QuizEngine renders here --></div>
+
+        <!-- Static info block, not part of the quiz engine -->
+        <section class="quiz-card about-condition">
+
+            <h2>What is Autism?</h2>
+
+            <p>
+                Autism, or Autism Spectrum Disorder, is a neurodevelopmental
+                condition, meaning it reflects differences in how the brain
+                develops, not a result of upbringing or personal choice.
+                It's called a "spectrum" because it looks different in
+                every person who has it: some autistic traits might be
+                subtle and barely noticeable day to day, while others can
+                meaningfully shape how someone communicates, socializes, or
+                experiences their environment. In general, autism tends to
+                involve differences in social communication and
+                interaction, a strong preference for routine and
+                predictability, deeply focused interests, and, often,
+                heightened sensitivity to sounds, lights, textures, or
+                other sensory input. These aren't necessarily deficits to
+                "fix", many researchers now describe autism through a
+                strengths-based lens, recognizing that traits like intense
+                focus, pattern recognition, and attention to detail can be
+                genuine advantages in the right environment. Autism is
+                usually present from early childhood, though many people,
+                especially women and adults, aren't identified or
+                diagnosed until later in life.
+            </p>
+
+            <p class="quiz-attribution">
+                Sources: Boston Children's Hospital, Harvard Medical School
+                (Autism Spectrum Disorders); Stanford Neurodiversity
+                Project, Stanford University School of Medicine
+                (Strengths-Based Model of Neurodiversity).
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="../js/nav.js" defer></script>
+
+    <!-- 1. Generic engine (shared by every test) -->
+    <script src="../js/quiz-engine.js"></script>
+
+    <!-- 2. This test's data (unique per test) -->
+    <script src="../js/tests/autism-data.js"></script>
+
+    <!-- 3. Wire them together -->
+    <script>
+        new QuizEngine({
+            container: "#quiz-app",
+            testData: window.QuizData.autism
+        });
+    </script>
+
+</body>
+</html>
