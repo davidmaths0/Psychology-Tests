@@ -1,0 +1,539 @@
+/* ==========================================================================
+   Utility
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+}
+
+/* ==========================================================================
+   Intro tagline
+   ========================================================================== */
+
+.game-tagline {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 14px;
+}
+
+/* ==========================================================================
+   Stats bar
+   ========================================================================== */
+
+.game-stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-subtle);
+
+    margin-bottom: 14px;
+}
+
+.game-round {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.game-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    animation: gamePulse 1.6s ease-in-out infinite;
+}
+
+@keyframes gamePulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+}
+
+.game-stats-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.game-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--color-heading);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   Instruction box
+   ========================================================================== */
+
+.game-instruction {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    background: var(--color-page-bg);
+    border-radius: var(--radius-md);
+    padding: 16px 18px;
+
+    margin-bottom: 20px;
+}
+
+.game-instruction-icon {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--color-primary-soft);
+    border-radius: var(--radius-md);
+
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.game-instruction-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+    margin-bottom: 2px;
+}
+
+.game-instruction-body {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-heading);
+    line-height: 1.4;
+}
+
+.game-highlight {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* ==========================================================================
+   Tile grid
+   ========================================================================== */
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.game-grid-4col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.game-grid-5col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (min-width: 420px) {
+    .game-grid-4col {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .game-grid-5col {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.game-tile {
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--color-primary-soft);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    font-family: inherit;
+    font-weight: 700;
+    color: var(--color-heading-alt);
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.game-tile-number {
+    font-size: 22px;
+}
+
+.game-tile-word {
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    padding: 0 4px;
+    text-align: center;
+}
+
+.game-tile:hover {
+    background: var(--color-border-light);
+}
+
+.game-tile:active {
+    transform: scale(0.96);
+}
+
+.game-tile-correct {
+    background: #e7f8ee;
+    border-color: #4caf7d;
+    color: #2f8f5b;
+    animation: gameSuccess 0.3s ease-in-out;
+}
+
+.game-tile-incorrect {
+    background: #fdecec;
+    border-color: #e5726f;
+    color: #c74440;
+    animation: gameShake 0.4s ease-in-out;
+}
+
+@keyframes gameShake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+}
+
+@keyframes gameSuccess {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* ==========================================================================
+   Footer row
+   ========================================================================== */
+
+.game-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    font-size: 13px;
+    color: var(--color-subtle);
+}
+
+.game-footer .quiz-btn {
+    flex: none;
+    padding: 10px 16px;
+}
+
+.game-count-highlight {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   Completion modal
+   ========================================================================== */
+
+.game-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    background: rgba(23, 32, 51, 0.55);
+
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.game-modal-overlay.visible {
+    opacity: 1;
+}
+
+.game-modal-card {
+    width: 100%;
+    max-width: 380px;
+
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+
+    padding: 28px 24px;
+    text-align: center;
+
+    transform: scale(0.95);
+    transition: transform 0.25s ease;
+}
+
+.game-modal-overlay.visible .game-modal-card {
+    transform: scale(1);
+}
+
+.game-modal-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e7f8ee;
+    border-radius: 50%;
+
+    font-size: 28px;
+    color: #2f8f5b;
+}
+
+.game-modal-icon .ti {
+    margin-right: 0; /* centered standalone icon, no trailing text */
+}
+
+.game-modal-card h2 {
+    font-size: 21px;
+    color: var(--color-heading);
+    margin-bottom: 6px;
+}
+
+.game-modal-sub {
+    font-size: 13px;
+    color: var(--color-subtle);
+    margin-bottom: 22px;
+}
+
+.game-modal-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+
+    background: var(--color-page-bg);
+    border-radius: var(--radius-md);
+    padding: 16px;
+
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+.game-modal-label {
+    display: block;
+    font-size: 11px;
+    color: var(--color-subtle);
+    margin-bottom: 2px;
+}
+
+.game-modal-value {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--color-heading);
+}
+
+.game-modal-value-accent {
+    color: var(--color-primary);
+}
+
+.game-modal-card .quiz-btn {
+    width: 100%;
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: 600px) {
+
+    .game-tile-number {
+        font-size: 18px;
+    }
+
+    .game-grid {
+        gap: 8px;
+    }
+}
+
+/* ==========================================================================
+   Find the Matching Pairs (prefixed match- to stay independent from the
+   game- classes above, which belong to Find the Triplicate)
+   ========================================================================== */
+
+.match-info-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.match-info-box {
+    min-width: 96px;
+    padding: 10px 16px;
+
+    background: var(--color-page-bg);
+    border-radius: var(--radius-md);
+
+    text-align: center;
+}
+
+.match-info-label {
+    display: block;
+    font-size: 11px;
+    color: var(--color-subtle);
+    margin-bottom: 2px;
+}
+
+.match-info-value {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--color-heading);
+}
+
+/* Board */
+
+.match-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+    margin-bottom: 8px;
+}
+
+@media (min-width: 601px) {
+    .match-board.round-2 { grid-template-columns: repeat(4, 1fr); }
+    .match-board.round-3 { grid-template-columns: repeat(5, 1fr); }
+    .match-board.round-4 { grid-template-columns: repeat(6, 1fr); }
+}
+
+.match-card {
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--color-primary-soft);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.match-card i {
+    font-size: clamp(1.6rem, 5vw, 2.6rem);
+    color: var(--color-primary);
+    pointer-events: none;
+}
+
+.match-card:hover {
+    background: var(--color-border-light);
+    transform: translateY(-2px);
+}
+
+.match-card.selected {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(54, 120, 201, 0.15);
+}
+
+.match-card.matched {
+    border-color: #4caf7d;
+    background: #e7f8ee;
+    cursor: default;
+}
+
+.match-card.matched i {
+    color: #2f8f5b;
+}
+
+.match-card.matched:hover {
+    transform: none;
+}
+
+.match-card.wrong {
+    border-color: #e5726f;
+    background: #fdecec;
+    animation: matchShake 0.35s ease;
+}
+
+.match-card.wrong i {
+    color: #c74440;
+}
+
+@keyframes matchShake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-6px); }
+    40% { transform: translateX(6px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+}
+
+/* Status line */
+
+.match-status {
+    min-height: 22px;
+    margin-top: 14px;
+
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.match-status.correct {
+    color: #2f8f5b;
+}
+
+.match-status.incorrect {
+    color: #c74440;
+}
+
+/* Round / final result panels */
+
+.match-result {
+    display: none;
+    margin-top: 20px;
+    padding: 22px 20px;
+
+    background: var(--color-page-bg);
+    border-radius: var(--radius-md);
+
+    text-align: center;
+}
+
+.match-result h2 {
+    font-size: 19px;
+    color: var(--color-heading);
+    margin-bottom: 6px;
+}
+
+.match-result p {
+    font-size: 14px;
+    color: var(--color-subtle);
+}
+
+.match-final-score {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 12px 0;
+}
+
+.match-result .quiz-btn {
+    margin-top: 12px;
+    width: auto;
+    display: inline-block;
+    padding: 12px 28px;
+}

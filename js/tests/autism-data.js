@@ -179,7 +179,7 @@ window.QuizData.autism = {
         {
             id: "social",
             name: "Social Communication",
-            icon: "💬",
+            icon: "message-circle",
             interpretation: [
                 { min: 0, max: 6, label: "Low frequency of traits" },
                 { min: 7, max: 13, label: "Moderate frequency of traits" },
@@ -189,7 +189,7 @@ window.QuizData.autism = {
         {
             id: "focus",
             name: "Attention to Detail & Focused Interests",
-            icon: "🔎",
+            icon: "zoom-in",
             interpretation: [
                 { min: 0, max: 6, label: "Low frequency of traits" },
                 { min: 7, max: 13, label: "Moderate frequency of traits" },
@@ -199,7 +199,7 @@ window.QuizData.autism = {
         {
             id: "routine",
             name: "Need for Routine & Predictability",
-            icon: "📋",
+            icon: "list-check",
             interpretation: [
                 { min: 0, max: 6, label: "Low frequency of traits" },
                 { min: 7, max: 13, label: "Moderate frequency of traits" },
@@ -209,7 +209,7 @@ window.QuizData.autism = {
         {
             id: "sensory",
             name: "Sensory Sensitivity",
-            icon: "🔊",
+            icon: "ear",
             interpretation: [
                 { min: 0, max: 6, label: "Low frequency of traits" },
                 { min: 7, max: 13, label: "Moderate frequency of traits" },

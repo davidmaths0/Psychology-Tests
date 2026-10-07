@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find the Triplicate — Psychology Tests</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/quiz.css">
+    <link rel="stylesheet" href="../css/games.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+</head>
+
+<body>
+
+    <!-- Site header (same on every page) -->
+
+    <header class="site-header">
+        <div class="site-header-inner">
+
+            <a href="../index.html" class="site-logo">🧠 Psychology Tests</a>
+
+            <nav class="site-nav" id="site-nav">
+                <a href="../games.html">Games</a>
+                <a href="../learn.html">Learn</a>
+                <a href="../my-results.html">My Results</a>
+            </nav>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+
+        </div>
+    </header>
+
+    <main class="container">
+
+        <div class="quiz-card">
+
+            <!-- Intro screen: shown first, hides once Start is pressed -->
+            <div class="quiz-intro" id="game-intro">
+                <h1>Find the Triplicate</h1>
+                <p class="game-tagline">Train your focus</p>
+                <p class="quiz-description">
+                    Spot the number or word that appears exactly 3 times among the distractors, across 3 increasingly large rounds.
+                </p>
+                <p class="quiz-meta">3 rounds &middot; the timer starts when you press Start</p>
+                <button id="btn-start" class="quiz-btn quiz-btn-primary">Start</button>
+            </div>
+
+            <!-- Game screen: hidden until Start is pressed -->
+            <div id="game-play" class="hidden">
+
+                <!-- Stats bar -->
+                <div class="game-stats">
+                    <div class="game-round">
+                        <span class="game-dot"></span>
+                        <span id="round-text">ROUND 1 / 3</span>
+                    </div>
+                    <div class="game-stats-right">
+                        <div class="game-stat"><i class="ti ti-clock"></i> <span id="timer-text">00:00</span></div>
+                        <div class="game-stat"><i class="ti ti-trophy"></i> <span id="score-text">0</span></div>
+                    </div>
+                </div>
+
+                <!-- Progress bar -->
+                <div class="quiz-progress">
+                    <div id="progress-bar" class="quiz-progress-bar" style="width: 33.33%;"></div>
+                </div>
+
+                <!-- Instruction -->
+                <div class="game-instruction">
+                    <div class="game-instruction-icon">#</div>
+                    <div>
+                        <p class="game-instruction-label">Instruction</p>
+                        <p class="game-instruction-body" id="instruction-body">
+                            Tap the number that appears <span class="game-highlight">3 times</span>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tile grid -->
+                <div id="grid-container" class="game-grid"><!-- Tiles rendered by JS --></div>
+
+                <!-- Footer -->
+                <div class="game-footer">
+                    <button id="btn-restart" class="quiz-btn quiz-btn-secondary"><i class="ti ti-refresh"></i> Restart</button>
+                    <span>Target: <span id="found-count" class="game-count-highlight">0</span> / 3 found</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <nav class="footer-nav">
+                <a href="../games.html">Games</a>
+                <a href="../learn.html">Learn</a>
+                <a href="../my-results.html">My Results</a>
+            </nav>
+            <p>Psychology Tests</p>
+        </footer>
+
+    </main>
+
+    <!-- Completion modal -->
+    <div id="modal-overlay" class="game-modal-overlay hidden">
+        <div id="modal-card" class="game-modal-card">
+
+            <div class="game-modal-icon"><i class="ti ti-circle-check"></i></div>
+
+            <h2>Challenge Completed!</h2>
+            <p class="game-modal-sub">You successfully found all triplicate targets.</p>
+
+            <div class="game-modal-stats">
+                <div>
+                    <span class="game-modal-label">Total Time</span>
+                    <span id="final-time" class="game-modal-value">00:00</span>
+                </div>
+                <div>
+                    <span class="game-modal-label">Final Score</span>
+                    <span id="final-score" class="game-modal-value game-modal-value-accent">0 pts</span>
+                </div>
+            </div>
+
+            <button id="btn-play-again" class="quiz-btn quiz-btn-primary">Play Again</button>
+
+        </div>
+    </div>
+
+    <script src="../js/nav.js" defer></script>
+    <script src="../js/games/find-the-triplicate.js" defer></script>
+
+</body>
+</html>

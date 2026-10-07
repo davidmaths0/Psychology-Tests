@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/learn.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 </head>
 
 <body>
@@ -20,6 +21,7 @@
             <a href="index.html" class="site-logo">🧠 Psychology Tests</a>
 
             <nav class="site-nav" id="site-nav">
+                <a href="games.html">Games</a>
                 <a href="learn.html" class="active">Learn</a>
                 <a href="my-results.html">My Results</a>
             </nav>
@@ -48,90 +50,355 @@
         </header>
 
 
-        <!-- Content card: one section per condition, to be filled in -->
+        <!-- Content card: one accordion item per condition -->
 
         <div class="content-card">
 
-            <section class="learn-section">
-                <h2>😰 Anxiety (GAD)</h2>
-                <p class="learn-placeholder">Content coming soon.</p>
-            </section>
+            <div class="accordion-item">
 
-            <section class="learn-section">
-                <h2>🧠 ADHD</h2>
-                <p class="learn-placeholder">Content coming soon.</p>
-            </section>
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="panel-anxiety">
+                    <h2><i class="ti ti-mood-nervous"></i> Anxiety (GAD)</h2>
+                    <span class="accordion-icon">+</span>
+                </button>
 
-            <section class="learn-section">
-                <h2>🧩 Autism</h2>
+                <div class="accordion-panel" id="panel-anxiety">
+                    <div class="accordion-panel-inner">
+                        <p class="learn-placeholder">Content coming soon.</p>
+                    </div>
+                </div>
 
-                <div class="timeline-section">
+            </div>
 
-                    <h3 class="timeline-title">History of Autism Studies</h3>
-                    <p class="timeline-subtitle">Key milestones in understanding autism spectrum and neurodiversity</p>
 
-                    <div class="timeline-slider">
-                        <div class="timeline-track">
+            <div class="accordion-item">
 
-                            <div class="timeline-card active">
-                                <span class="card-year">1911</span>
-                                <h4 class="card-title">Coining the Term</h4>
-                                <p class="card-desc">
-                                    Swiss psychiatrist <strong>Eugen Bleuler</strong> coined the term <em>"autism"</em> (from the Greek <em>autos</em>, meaning "self") to describe the self-absorbed withdrawal observed in adults with schizophrenia.
-                                </p>
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="panel-adhd">
+                    <h2><i class="ti ti-brain"></i> ADHD</h2>
+                    <span class="accordion-icon">+</span>
+                </button>
+
+                <div class="accordion-panel" id="panel-adhd">
+                    <div class="accordion-panel-inner">
+
+                        <div class="timeline-section">
+
+                            <h3 class="timeline-title">History of ADHD Research</h3>
+                            <p class="timeline-subtitle">More than 250 years of evolving understanding, from early descriptions of inattention to today's polygenic, multi-system models</p>
+
+                            <div class="timeline-slider">
+                                <div class="timeline-track">
+
+                                    <div class="timeline-card active">
+                                        <span class="card-year">1775</span>
+                                        <h4 class="card-title">An Early Description of Inattention</h4>
+                                        <p class="card-desc">
+                                            German physician <strong>Melchior Adam Weikard</strong> described a pattern of attention difficulties he called <em>Mangel der Aufmerksamkeit</em> ("lack of attention") or <em>Attentio Volubilis</em>. This isn't a modern ADHD diagnosis, but it's one of the earliest historical precedents for inattention-like symptoms.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">1798</span>
+                                        <h4 class="card-title">"Disease of Attention"</h4>
+                                        <p class="card-desc">
+                                            Scottish physician <strong>Alexander Crichton</strong> described a condition he called a "disease of attention," referring to people unable to sustain focus for extended periods — showing that inattention was recognized long before the concept of hyperactivity emerged.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">1902</span>
+                                        <h4 class="card-title">A Foundational Milestone</h4>
+                                        <p class="card-desc">
+                                            British pediatrician <strong>George Frederic Still</strong> presented observations on 43 children with attention, impulsivity, and behavioral-control difficulties to the Royal College of Physicians, describing what he called a "defect of moral control." Many historians consider these 1902 lectures the scientific starting point of ADHD's modern history.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">1937</span>
+                                        <h4 class="card-title">An Accidental Discovery</h4>
+                                        <p class="card-desc">
+                                            American physician <strong>Charles Bradley</strong> gave Benzedrine (an amphetamine) to children with behavioral problems while investigating an unrelated procedure, and observed unexpected improvements in their behavior and school performance — paving the way for stimulant treatment.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">1940s – 1950s</span>
+                                        <h4 class="card-title">The "Brain Damage" Hypothesis</h4>
+                                        <p class="card-desc">
+                                            Researchers proposed that some children had "brain damage," later softened to "minimal brain damage," since many showed no clear evidence of an actual lesion. Terminology gradually shifted toward "minimal brain dysfunction," reflecting a growing suspicion of an underlying neurological difference without visible structural damage.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">1952</span>
+                                        <h4 class="card-title">No Formal Category Yet</h4>
+                                        <p class="card-desc">
+                                            The first Diagnostic and Statistical Manual of Mental Disorders (DSM-I) had no category equivalent to ADHD — showing it didn't yet exist as a formal diagnosis in the US psychiatric classification system.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">1968</span>
+                                        <h4 class="card-title">"Hyperkinetic Reaction of Childhood"</h4>
+                                        <p class="card-desc">
+                                            The DSM-II introduced this category, centered mainly on hyperactivity, restlessness, distractibility, and short attention spans. At this stage, the concept was far more tied to hyperactivity than to attention deficits.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">1970s</span>
+                                        <h4 class="card-title">A Conceptual Shift</h4>
+                                        <p class="card-desc">
+                                            Psychologist <strong>Virginia Douglas</strong> argued that sustained attention and impulse-control problems might matter more than hyperactivity itself, shifting the central question from "is this mainly about hyperactivity?" to "is this fundamentally about attention and impulse regulation?" — a shift that would prove decisive for the DSM-III.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">1980</span>
+                                        <h4 class="card-title">DSM-III: "ADD"</h4>
+                                        <p class="card-desc">
+                                            The DSM-III renamed the condition Attention Deficit Disorder (ADD), recognizing two presentations — with and without hyperactivity. For the first time, inattention could be the central feature even without hyperactivity, alongside much more specific diagnostic criteria.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">1987</span>
+                                        <h4 class="card-title">The Term "ADHD" Is Born</h4>
+                                        <p class="card-desc">
+                                            With the DSM-III-R, the name changed to Attention-Deficit Hyperactivity Disorder (ADHD). The earlier subtypes were replaced with a single combined list of inattention, impulsivity, and hyperactivity symptoms — the term that would evolve into today's concept of ADHD.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">1990s</span>
+                                        <h4 class="card-title">No Longer Just a Childhood Condition</h4>
+                                        <p class="card-desc">
+                                            Research into whether symptoms could persist into adolescence and adulthood grew substantially, and concepts like executive function, behavioral inhibition, motivation, working memory, and emotional regulation gained importance. The view of ADHD began shifting from "the hyperactive child" to a far more complex disorder.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">1994</span>
+                                        <h4 class="card-title">DSM-IV: Three Presentations</h4>
+                                        <p class="card-desc">
+                                            The DSM-IV consolidated the diagnosis into three presentations — Predominantly Inattentive, Predominantly Hyperactive-Impulsive, and Combined — recognizing that two people could both have ADHD while looking quite different from one another. It was developed through an extensive literature review involving over 1,000 people and professional organizations.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">1990s – 2000s</span>
+                                        <h4 class="card-title">The Neuroimaging Era Begins</h4>
+                                        <p class="card-desc">
+                                            With techniques like MRI, fMRI, diffusion tensor imaging, and resting-state imaging, researchers began studying the brains of people with ADHD directly — moving away from searching for "one damaged brain region" toward studying entire brain networks involved in attention, cognition, emotion, and sensorimotor function.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">2000s</span>
+                                        <h4 class="card-title">A Strong Hereditary Component</h4>
+                                        <p class="card-desc">
+                                            Twin, family, and adoption studies showed a strong genetic influence, with heritability estimates generally falling around 60-80% depending on the study and method — though this doesn't mean there's a single "ADHD gene." Evidence instead points to a polygenic architecture, where many different genetic variations each contribute small individual effects.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">2009</span>
+                                        <h4 class="card-title">The First GWAS Studies</h4>
+                                        <p class="card-desc">
+                                            Genome-wide association studies (GWAS) began searching for genetic variants linked to ADHD without pre-selecting candidate genes. Early results were modest — individual variants with large enough effects were hard to find — which gradually led researchers to abandon the idea of finding "the gene responsible for ADHD."
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">2012</span>
+                                        <h4 class="card-title">Beyond a Single Neurotransmitter</h4>
+                                        <p class="card-desc">
+                                            A review by <strong>Cortese and colleagues</strong>, affiliated with the NYU Child Study Center, summarized evidence from genetics, neuroimaging, neurophysiology, and neurotransmitters, concluding that ADHD was unlikely to be explained by a single neurotransmitter abnormality — evidence pointed toward multiple systems, including dopamine, norepinephrine, serotonin, and acetylcholine, along with multiple brain networks.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">2013</span>
+                                        <h4 class="card-title">DSM-5: A Lifespan Perspective</h4>
+                                        <p class="card-desc">
+                                            The DSM-5 introduced important changes: more explicit recognition of ADHD in adults, a lowered required age of onset (from 7 to 12 years), adjusted criteria for adults, and retention of the three presentations — reflecting a much broader, lifespan view of the disorder.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">2015</span>
+                                        <h4 class="card-title">ADHD Across the Lifespan</h4>
+                                        <p class="card-desc">
+                                            A longitudinal study from <strong>King's College London</strong> followed a cohort of over 1,000 people across four decades, finding that symptoms and functional consequences could persist into adulthood. It also raised an important question: adult-diagnosed ADHD doesn't always appear to be a simple, direct continuation of childhood ADHD — a finding that sparked debate over how adult ADHD should be conceptualized.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">2019</span>
+                                        <h4 class="card-title">Multiple Factors, Not One Cause</h4>
+                                        <p class="card-desc">
+                                            Researchers from <strong>Harvard Medical School, Massachusetts General Hospital, and the Broad Institute</strong> summarized how genetic studies were reshaping the understanding of ADHD, with evidence increasingly pointing to a combination of multiple genetic variants, brain development, environmental factors, and their interaction — rather than a single cause.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">2021</span>
+                                        <h4 class="card-title">27 Genetic Loci Identified</h4>
+                                        <p class="card-desc">
+                                            A major international study analyzing 38,691 people with ADHD and 186,843 controls identified 27 statistically significant genetic loci. The implicated genes were particularly linked to early brain development and neurons, including dopaminergic systems.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">2020s</span>
+                                        <h4 class="card-title">Studying the Whole System</h4>
+                                        <p class="card-desc">
+                                            Today's research no longer looks for "the ADHD part of the brain." Instead, it studies genetics, brain development, neural networks, cognition, behavior, environment, and lifespan development together. Current models view ADHD as a heterogeneous, highly polygenic disorder, where multiple different mechanisms can produce similar clinical profiles.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">2026</span>
+                                        <h4 class="card-title">Toward a Personalized Explanation</h4>
+                                        <p class="card-desc">
+                                            The most recent research combines genetics, neuroimaging, neuropsychology, machine learning, longitudinal data, and environmental factors, moving from a diagnosis based mainly on symptoms toward models that can explain why different people with ADHD present such different profiles. A 2026 family study, for example, identified new genetic associations and regions of interest through family and genomic analysis.
+                                        </p>
+                                    </div>
+
+                                </div>
                             </div>
 
-                            <div class="timeline-card">
-                                <span class="card-year">1943</span>
-                                <h4 class="card-title">Early Infantile Autism</h4>
-                                <p class="card-desc">
-                                    <strong>Leo Kanner</strong> published the first clinical study on 11 children in the US, defining "early infantile autism" characterized by a desire for sameness, language challenges, and social isolation.
-                                </p>
+                            <div class="timeline-controls">
+                                <button class="control-btn prev-btn" aria-label="Previous Slide">&larr; Previous</button>
+                                <div class="timeline-dots"></div>
+                                <button class="control-btn next-btn" aria-label="Next Slide">Next &rarr;</button>
                             </div>
 
-                            <div class="timeline-card">
-                                <span class="card-year">1944</span>
-                                <h4 class="card-title">Autistic Psychopathy</h4>
-                                <p class="card-desc">
-                                    Austrian pediatrician <strong>Hans Asperger</strong> identified a group of children with high verbal abilities alongside social and communication difficulties. His work gained global recognition decades later.
-                                </p>
+                            <!-- Paradigm-shift recap -->
+                            <div class="paradigm-shift">
+                                <p class="paradigm-step"><strong>1775–1900</strong> — "Some people seem unable to sustain attention."</p>
+                                <p class="paradigm-arrow">↓</p>
+                                <p class="paradigm-step"><strong>1902–1950</strong> — "There might be some kind of neurological problem."</p>
+                                <p class="paradigm-arrow">↓</p>
+                                <p class="paradigm-step"><strong>1960s–1970s</strong> — "Is this mainly about hyperactivity?"</p>
+                                <p class="paradigm-arrow">↓</p>
+                                <p class="paradigm-step"><strong>1980s</strong> — "No — attention matters just as much."</p>
+                                <p class="paradigm-arrow">↓</p>
+                                <p class="paradigm-step"><strong>1990s–2000s</strong> — "There are problems with inhibition and executive function."</p>
+                                <p class="paradigm-arrow">↓</p>
+                                <p class="paradigm-step"><strong>2000s–2010s</strong> — "There are differences across multiple brain circuits."</p>
+                                <p class="paradigm-arrow">↓</p>
+                                <p class="paradigm-step"><strong>2010s–2020s</strong> — "Genetics has a major influence, but there's no single gene."</p>
+                                <p class="paradigm-arrow">↓</p>
+                                <p class="paradigm-step"><strong>Today</strong> — "ADHD is a heterogeneous neurodevelopmental disorder produced by the interaction of multiple genetic, neurobiological, and environmental factors."</p>
                             </div>
 
-                            <div class="timeline-card">
-                                <span class="card-year">1960s – 70s</span>
-                                <h4 class="card-title">The "Refrigerator Mother" Myth</h4>
-                                <p class="card-desc">
-                                    Bruno Bettelheim popularized the false theory attributing autism to emotional coldness from mothers. This idea was later entirely debunked as the biological and neurological basis of autism was proven.
-                                </p>
+                            <p class="learn-placeholder" style="margin-top: 16px;">
+                                That last point is probably the most important scientific shift: it's no longer considered accurate to explain ADHD simply as "lack of dopamine," "a frontal lobe problem," or "a lack of discipline." Current evidence points to a much more distributed and complex system.
+                            </p>
+
+                            <!-- Disclaimer -->
+                            <p class="learn-disclaimer">
+                                This history also explains why it would be problematic to present an online test as capable of "detecting ADHD." Diagnosis today remains clinical, and no score from a web questionnaire can, on its own, determine that a person has ADHD.
+                            </p>
+
+                            <!-- Sources -->
+                            <p class="learn-attribution">
+                                Sources: King's College London / Maudsley (genetics, development, and adult ADHD);
+                                Harvard Medical School / Massachusetts General Hospital / Broad Institute (molecular genetics and GWAS);
+                                University of Oxford (neuroimaging and brain connectivity);
+                                NYU Child Study Center (neurobiology, genetics, and neuroimaging);
+                                and academic historical reviews on the evolution of the ADHD concept.
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="accordion-item">
+
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="panel-autism">
+                    <h2><i class="ti ti-puzzle"></i> Autism</h2>
+                    <span class="accordion-icon">+</span>
+                </button>
+
+                <div class="accordion-panel" id="panel-autism">
+                    <div class="accordion-panel-inner">
+
+                        <div class="timeline-section">
+
+                            <h3 class="timeline-title">History of Autism Studies</h3>
+                            <p class="timeline-subtitle">Key milestones in understanding autism spectrum and neurodiversity</p>
+
+                            <div class="timeline-slider">
+                                <div class="timeline-track">
+
+                                    <div class="timeline-card active">
+                                        <span class="card-year">1911</span>
+                                        <h4 class="card-title">Coining the Term</h4>
+                                        <p class="card-desc">
+                                            Swiss psychiatrist <strong>Eugen Bleuler</strong> coined the term <em>"autism"</em> (from the Greek <em>autos</em>, meaning "self") to describe the self-absorbed withdrawal observed in adults with schizophrenia.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">1943</span>
+                                        <h4 class="card-title">Early Infantile Autism</h4>
+                                        <p class="card-desc">
+                                            <strong>Leo Kanner</strong> published the first clinical study on 11 children in the US, defining "early infantile autism" characterized by a desire for sameness, language challenges, and social isolation.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">1944</span>
+                                        <h4 class="card-title">Autistic Psychopathy</h4>
+                                        <p class="card-desc">
+                                            Austrian pediatrician <strong>Hans Asperger</strong> identified a group of children with high verbal abilities alongside social and communication difficulties. His work gained global recognition decades later.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">1960s – 70s</span>
+                                        <h4 class="card-title">The "Refrigerator Mother" Myth</h4>
+                                        <p class="card-desc">
+                                            Bruno Bettelheim popularized the false theory attributing autism to emotional coldness from mothers. This idea was later entirely debunked as the biological and neurological basis of autism was proven.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">1980s</span>
+                                        <h4 class="card-title">The Autism Spectrum</h4>
+                                        <p class="card-desc">
+                                            British physician <strong>Lorna Wing</strong> introduced the concept of the <em>"Autism Spectrum"</em>, demonstrating that autism is not a rigid single condition, but a continuous range of neurodevelopmental variations.
+                                        </p>
+                                    </div>
+
+                                    <div class="timeline-card">
+                                        <span class="card-year">2013 – Present</span>
+                                        <h4 class="card-title">DSM-5 &amp; Neurodiversity</h4>
+                                        <p class="card-desc">
+                                            The DSM-5 unified former sub-categories (like Asperger's syndrome) under the single diagnosis of <strong>Autism Spectrum Disorder (ASD)</strong>, aligning modern psychology with the neurodiversity framework.
+                                        </p>
+                                    </div>
+
+                                </div>
                             </div>
 
-                            <div class="timeline-card">
-                                <span class="card-year">1980s</span>
-                                <h4 class="card-title">The Autism Spectrum</h4>
-                                <p class="card-desc">
-                                    British physician <strong>Lorna Wing</strong> introduced the concept of the <em>"Autism Spectrum"</em>, demonstrating that autism is not a rigid single condition, but a continuous range of neurodevelopmental variations.
-                                </p>
-                            </div>
-
-                            <div class="timeline-card">
-                                <span class="card-year">2013 – Present</span>
-                                <h4 class="card-title">DSM-5 &amp; Neurodiversity</h4>
-                                <p class="card-desc">
-                                    The DSM-5 unified former sub-categories (like Asperger's syndrome) under the single diagnosis of <strong>Autism Spectrum Disorder (ASD)</strong>, aligning modern psychology with the neurodiversity framework.
-                                </p>
+                            <div class="timeline-controls">
+                                <button class="control-btn prev-btn" aria-label="Previous Slide">&larr; Previous</button>
+                                <div class="timeline-dots"></div>
+                                <button class="control-btn next-btn" aria-label="Next Slide">Next &rarr;</button>
                             </div>
 
                         </div>
-                    </div>
 
-                    <div class="timeline-controls">
-                        <button class="control-btn prev-btn" aria-label="Previous Slide">&larr; Previous</button>
-                        <div class="timeline-dots"></div>
-                        <button class="control-btn next-btn" aria-label="Next Slide">Next &rarr;</button>
                     </div>
-
                 </div>
-            </section>
+
+            </div>
 
         </div>
 
@@ -139,12 +406,18 @@
         <!-- Footer -->
 
         <footer class="footer">
-            Psychology Tests
+            <nav class="footer-nav">
+                <a href="games.html">Games</a>
+                <a href="learn.html">Learn</a>
+                <a href="my-results.html">My Results</a>
+            </nav>
+            <p>Psychology Tests</p>
         </footer>
 
     </main>
 
     <script src="js/nav.js" defer></script>
+    <script src="js/accordion.js" defer></script>
     <script src="js/timeline.js" defer></script>
 
 </body>

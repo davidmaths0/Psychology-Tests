@@ -47,7 +47,7 @@ window.QuizData.gad7 = {
         {
             id: "anxiety",
             name: "Anxiety",
-            icon: "😰",
+            icon: "mood-nervous",
             // Official GAD-7 cutoffs, based on the RAW score (0-21), not %.
             interpretation: [
                 { min: 0, max: 4, label: "Minimal anxiety" },

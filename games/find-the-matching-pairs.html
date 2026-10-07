@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find the Matching Pairs — Psychology Tests</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/quiz.css">
+    <link rel="stylesheet" href="../css/games.css">
+
+    <!-- Tabler Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+</head>
+
+<body>
+
+    <!-- Site header (same on every page) -->
+
+    <header class="site-header">
+        <div class="site-header-inner">
+
+            <a href="../index.html" class="site-logo">🧠 Psychology Tests</a>
+
+            <nav class="site-nav" id="site-nav">
+                <a href="../games.html">Games</a>
+                <a href="../learn.html">Learn</a>
+                <a href="../my-results.html">My Results</a>
+            </nav>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+
+        </div>
+    </header>
+
+    <main class="container">
+
+        <div class="quiz-card">
+
+            <div class="quiz-intro" style="margin-bottom: 20px;">
+                <h1>Find the Matching Pairs</h1>
+                <p class="game-tagline">De-stress and keep your focus</p>
+                <p class="quiz-description">
+                    Tap two tiles that share the same icon. Some tiles have no match at all — part of the challenge is spotting which ones are worth pairing.
+                </p>
+            </div>
+
+            <!-- Info row -->
+            <div class="match-info-row">
+
+                <div class="match-info-box">
+                    <span class="match-info-label">Round</span>
+                    <span class="match-info-value" id="roundDisplay">1 / 4</span>
+                </div>
+
+                <div class="match-info-box">
+                    <span class="match-info-label">Mistakes</span>
+                    <span class="match-info-value" id="mistakesDisplay">0</span>
+                </div>
+
+                <div class="match-info-box">
+                    <span class="match-info-label">Total Mistakes</span>
+                    <span class="match-info-value" id="totalMistakesDisplay">0</span>
+                </div>
+
+            </div>
+
+            <!-- Board -->
+            <div id="gameBoard" class="match-board round-1"><!-- Tiles rendered by JS --></div>
+
+            <!-- Status -->
+            <div id="status" class="match-status"></div>
+
+            <!-- Round result -->
+            <div id="roundResult" class="match-result">
+                <h2 id="roundResultTitle">Round Complete!</h2>
+                <p id="roundResultText"></p>
+            </div>
+
+            <!-- Final result -->
+            <div id="finalResult" class="match-result">
+                <h2>Game Complete!</h2>
+                <p>Your total number of mistakes:</p>
+                <div class="match-final-score" id="finalScore">0</div>
+                <p>Lower score wins!</p>
+                <button id="playAgain" class="quiz-btn quiz-btn-primary">Play Again</button>
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <nav class="footer-nav">
+                <a href="../games.html">Games</a>
+                <a href="../learn.html">Learn</a>
+                <a href="../my-results.html">My Results</a>
+            </nav>
+            <p>Psychology Tests</p>
+        </footer>
+
+    </main>
+
+    <script src="../js/nav.js" defer></script>
+    <script src="../js/games/find-the-matching-pairs.js" defer></script>
+
+</body>
+</html>

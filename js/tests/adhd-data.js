@@ -173,7 +173,7 @@ window.QuizData.adhd = {
         {
             id: "total",
             name: "Overall screening score",
-            icon: "🧠",
+            icon: "brain",
             interpretation: [
                 { min: 0, max: 8, label: "Low frequency of symptoms" },
                 { min: 9, max: 16, label: "Moderate frequency of symptoms" },
@@ -183,7 +183,7 @@ window.QuizData.adhd = {
         {
             id: "inattention",
             name: "Inattention",
-            icon: "🧩",
+            icon: "puzzle",
             interpretation: [
                 { min: 0, max: 13, label: "Low frequency of symptoms" },
                 { min: 14, max: 26, label: "Moderate frequency of symptoms" },
@@ -193,7 +193,7 @@ window.QuizData.adhd = {
         {
             id: "hyperactivity",
             name: "Hyperactivity / Impulsivity",
-            icon: "⚡",
+            icon: "bolt",
             interpretation: [
                 { min: 0, max: 10, label: "Low frequency of symptoms" },
                 { min: 11, max: 21, label: "Moderate frequency of symptoms" },

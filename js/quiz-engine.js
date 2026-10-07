@@ -319,7 +319,7 @@ class QuizEngine {
             return `
                 <div class="result-item">
                     <div class="result-label">
-                        <span class="result-name">${dim.icon || ""} ${dim.name}</span>
+                        <span class="result-name">${dim.icon ? `<i class="ti ti-${dim.icon}"></i>` : ""} ${dim.name}</span>
                         <span class="result-percentage">${percentage}%</span>
                     </div>
                     <div class="bar-background">
