@@ -131,6 +131,11 @@
    Timeline component (used on the Learn page, one per condition)
    ========================================================================== */
 
+/* When a timeline has no subtitle, give the title room above the slider */
+.timeline-title + .timeline-slider {
+    margin-top: 14px;
+}
+
 .timeline-subtitle {
     font-size: 14px;
     font-style: italic;
@@ -153,12 +158,27 @@
 
     display: flex;
     align-items: center;
+
+    touch-action: pan-y; /* vertical scroll stays native; horizontal swipes go to timeline.js */
 }
 
 .timeline-track {
     display: flex;
     width: 100%;
     transition: transform 0.4s ease-in-out;
+}
+
+/* While a finger is dragging the track: follow it instantly and keep
+   neighboring cards visible so the slide doesn't reveal empty space */
+.timeline-track.dragging {
+    transition: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.timeline-track.dragging .timeline-card {
+    opacity: 1;
+    transition: none;
 }
 
 .timeline-card {
@@ -215,11 +235,18 @@
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
 
-    padding: 9px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 48px;
+    height: 40px;
+    padding: 0 16px;
 
     font-family: inherit;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
     color: var(--color-primary);
     cursor: pointer;
 
