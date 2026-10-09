@@ -66,6 +66,43 @@
     padding-bottom: 28px;
 }
 
+.category-tag {
+    display: inline-block;
+    margin: 0 0 18px;
+    padding: 6px 10px;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    background: #f7f8fa;
+    color: var(--color-label);
+    font-size: 12px;
+}
+
+.condition-article {
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid var(--color-border-light);
+    max-width: 760px;
+}
+
+.condition-article h3 {
+    margin-bottom: 12px;
+    color: var(--color-heading);
+    font-size: 19px;
+}
+
+.condition-article p:not(.learn-attribution) {
+    color: var(--color-label);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.condition-article .learn-attribution a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
 /* ==========================================================================
    Paradigm-shift summary (the arrow-chain recap under a timeline)
    ========================================================================== */
@@ -134,15 +171,6 @@
 /* When a timeline has no subtitle, give the title room above the slider */
 .timeline-title + .timeline-slider {
     margin-top: 14px;
-}
-
-.timeline-subtitle {
-    font-size: 14px;
-    font-style: italic;
-    line-height: 1.7;
-    color: var(--color-subtle);
-    margin-top: -4px;
-    margin-bottom: 22px;
 }
 
 .timeline-slider {
@@ -270,12 +298,20 @@
 }
 
 .dot {
+    flex: 0 0 auto;
     width: 8px;
     height: 8px;
+    padding: 0;
+    border: 0;
     border-radius: 50%;
     background: var(--color-border);
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.dot:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
 }
 
 .dot.active {

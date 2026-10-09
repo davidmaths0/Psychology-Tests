@@ -63,6 +63,7 @@
                     <div class="game-stats-right">
                         <div class="game-stat"><i class="ti ti-clock"></i> <span id="timer-text">00:00</span></div>
                         <div class="game-stat"><i class="ti ti-trophy"></i> <span id="score-text">0</span></div>
+                        <div class="game-stat"><i class="ti ti-x"></i> Mistakes: <span id="mistakes-text">0</span></div>
                     </div>
                 </div>
 
@@ -124,9 +125,16 @@
                     <span class="game-modal-label">Final Score</span>
                     <span id="final-score" class="game-modal-value game-modal-value-accent">0 pts</span>
                 </div>
+                <div>
+                    <span class="game-modal-label">Mistakes</span>
+                    <span id="final-mistakes" class="game-modal-value">0</span>
+                </div>
             </div>
 
-            <button id="btn-play-again" class="quiz-btn quiz-btn-primary">Play Again</button>
+            <div class="game-completion-actions">
+                <button id="btn-play-again" class="quiz-btn quiz-btn-primary">Play Again</button>
+                <a href="../games.html" class="quiz-btn game-btn-complementary">More Games</a>
+            </div>
 
         </div>
     </div>

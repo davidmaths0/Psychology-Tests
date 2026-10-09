@@ -41,22 +41,30 @@
         const cards = Array.from(track.children);
         let currentIndex = 0;
 
-        // Build one dot per card
-        cards.forEach((_, index) => {
-            const dot = document.createElement("div");
-            dot.classList.add("dot");
-            if (index === 0) dot.classList.add("active");
-            dot.addEventListener("click", () => goToSlide(index));
-            dotsContainer.appendChild(dot);
-        });
-
-        const dots = Array.from(dotsContainer.children);
+        const MAX_VISIBLE_DOTS = 4;
 
         function update() {
             track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
             cards.forEach((card, i) => card.classList.toggle("active", i === currentIndex));
-            dots.forEach((dot, i) => dot.classList.toggle("active", i === currentIndex));
+
+            const visibleDotCount = Math.min(cards.length, MAX_VISIBLE_DOTS);
+            const firstVisibleIndex = Math.min(
+                Math.max(0, currentIndex - Math.floor(visibleDotCount / 2)),
+                cards.length - visibleDotCount
+            );
+            dotsContainer.replaceChildren();
+
+            for (let index = firstVisibleIndex; index < firstVisibleIndex + visibleDotCount; index++) {
+                const dot = document.createElement("button");
+                dot.type = "button";
+                dot.classList.add("dot");
+                dot.classList.toggle("active", index === currentIndex);
+                dot.setAttribute("aria-label", `Go to slide ${index + 1} of ${cards.length}`);
+                if (index === currentIndex) dot.setAttribute("aria-current", "true");
+                dot.addEventListener("click", () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            }
 
             prevBtn.disabled = currentIndex === 0;
             nextBtn.disabled = currentIndex === cards.length - 1;

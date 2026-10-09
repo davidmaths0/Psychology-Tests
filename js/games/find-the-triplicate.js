@@ -30,6 +30,7 @@
     // Global state
     let currentRoundIndex = 0;
     let score = 0;
+    let mistakes = 0;
     let timerInterval = null;
     let elapsedSeconds = 0;
     let activeGridData = [];
@@ -39,8 +40,8 @@
 
     // DOM elements (resolved once the game page has loaded)
     let gridContainer, roundText, timerText, scoreText, progressBar,
-        instructionBody, foundCountEl, btnRestart, modalOverlay,
-        modalCard, finalTimeEl, finalScoreEl, btnPlayAgain,
+        instructionBody, foundCountEl, mistakesText, finalMistakesEl,
+        btnRestart, modalOverlay, modalCard, finalTimeEl, finalScoreEl, btnPlayAgain,
         gameIntro, gamePlay, btnStart;
 
     function getRandomInt(min, max) {
@@ -201,6 +202,8 @@
                 }, 600);
             }
         } else {
+            mistakes++;
+            mistakesText.textContent = mistakes;
             isProcessing = true;
             btnElement.classList.add("game-tile-incorrect");
 
@@ -237,6 +240,7 @@
 
     function showCompletionModal() {
         finalTimeEl.textContent = formatTime(elapsedSeconds);
+        finalMistakesEl.textContent = mistakes;
 
         const speedBonus = Math.max(0, 300 - elapsedSeconds * 5);
         finalScoreEl.textContent = `${score + speedBonus} pts`;
@@ -257,8 +261,10 @@
     function initGame() {
         currentRoundIndex = 0;
         score = 0;
+        mistakes = 0;
         isProcessing = false;
         scoreText.textContent = "0";
+        mistakesText.textContent = "0";
         hideCompletionModal();
 
         activeGridData = generateRoundData(ROUND_CONFIGS[currentRoundIndex]);
@@ -271,6 +277,8 @@
         roundText = document.getElementById("round-text");
         timerText = document.getElementById("timer-text");
         scoreText = document.getElementById("score-text");
+        mistakesText = document.getElementById("mistakes-text");
+        finalMistakesEl = document.getElementById("final-mistakes");
         progressBar = document.getElementById("progress-bar");
         instructionBody = document.getElementById("instruction-body");
         foundCountEl = document.getElementById("found-count");

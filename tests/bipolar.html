@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bipolar Mood Patterns Self-Assessment — Psychology Tests</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/quiz.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a href="../index.html" class="site-logo">🧠 Psychology Tests</a>
+            <nav class="site-nav" id="site-nav">
+                <a href="../games.html">Games</a>
+                <a href="../learn.html">Learn</a>
+                <a href="../my-results.html">My Results</a>
+            </nav>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="quiz-app"><!-- QuizEngine renders here --></div>
+
+        <section class="quiz-card about-condition">
+            <h2>What Is Bipolar Disorder?</h2>
+
+            <p>
+                Bipolar disorder is a mental health condition that can cause
+                distinct episodes of changes in mood, energy, sleep, and
+                activity. These episodes are more intense or last longer than
+                ordinary ups and downs, and they can affect a person's daily
+                life. A manic episode involves an unusually elevated or
+                persistently irritable mood together with increased energy or
+                activity; it can seriously disrupt work, relationships, or
+                safety. Hypomania is a less severe, sustained period of
+                similar changes. Depressive episodes can involve persistent
+                low mood or loss of interest, along with changes in sleep,
+                appetite, energy, concentration, or self-worth.
+            </p>
+
+            <p>
+                Bipolar I disorder includes at least one manic episode.
+                Bipolar II disorder involves hypomanic and major depressive
+                episodes, without a manic episode. Cyclothymic disorder
+                involves recurring mood symptoms that do not meet the full
+                criteria for those episodes. A diagnosis depends on a
+                clinician's careful review of a person's history, how long
+                symptoms lasted, how they affected daily life, and possible
+                alternative explanations. A questionnaire can help someone
+                decide whether to seek an evaluation, but it cannot diagnose
+                bipolar disorder.
+            </p>
+
+            <p class="quiz-attribution">
+                Sources: National Institute of Mental Health, “Bipolar
+                Disorder”; American Psychiatric Association, DSM-5-TR.
+                This page provides general information, not a diagnosis or
+                medical advice.
+            </p>
+        </section>
+
+        <footer class="footer">
+            <nav class="footer-nav">
+                <a href="../games.html">Games</a>
+                <a href="../learn.html">Learn</a>
+                <a href="../my-results.html">My Results</a>
+            </nav>
+            <p>Psychology Tests</p>
+        </footer>
+    </main>
+
+    <script src="../js/nav.js" defer></script>
+    <script src="../js/quiz-engine.js"></script>
+    <script src="../js/tests/bipolar-data.js"></script>
+    <script>
+        new QuizEngine({
+            container: "#quiz-app",
+            testData: window.QuizData.bipolar
+        });
+    </script>
+
+</body>
+</html>

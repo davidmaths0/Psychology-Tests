@@ -349,6 +349,21 @@
     width: 100%;
 }
 
+.game-completion-actions {
+    display: grid;
+    gap: 10px;
+}
+
+/* Exact RGB complement of the site's primary blue (#3678c9). */
+.game-btn-complementary {
+    background: #c98736;
+    color: #ffffff;
+}
+
+.game-btn-complementary:hover {
+    background: #b7791f;
+}
+
 /* ==========================================================================
    Mobile
    ========================================================================== */
